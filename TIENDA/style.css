@@ -3248,3 +3248,27 @@ textarea:focus-visible {
         animation-iteration-count: 1 !important;
     }
 }
+
+
+/* Ajuste puntual: encabezado alineado al ancho del contenido de pago */
+.seccion-pago > .encabezado-seccion {
+    display: block;
+    width: min(100%, 1180px);
+    max-width: 1180px;
+    margin: 0 auto 36px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.seccion-pago > .encabezado-seccion h2 {
+    max-width: 100%;
+    margin: 0 0 10px;
+    overflow-wrap: break-word;
+}
+
+.seccion-pago > .encabezado-seccion p {
+    max-width: 100%;
+    margin: 0;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
