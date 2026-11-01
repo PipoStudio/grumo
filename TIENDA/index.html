@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Grumo: panadería y cafetería con pasteles, postres, pan dulce y café para disfrutar cada momento."
+    >
+
+    <title>Grumo | Panadería y Cafetería</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="subcarpetas/Recursos/miicono.ico">
+
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <div class="barra-superior">
+            <p>Un pequeño antojo puede alegrar tu día</p>
+        </div>
+
+        <div class="contenedor-header">
+
+            <a href="index.html" class="logo" aria-label="Grumo, página de inicio">
+                <span>Grumo</span>
+            </a>
+
+            <nav class="navegacion-principal" aria-label="Navegación principal">
+                <a href="index.html" class="activo">Inicio</a>
+                <a href="subcarpetas/catalogo.html">Catálogo</a>
+                <a href="subcarpetas/nosotros.html">Nosotros</a>
+            </nav>
+
+            <div class="acciones-header">
+                <a
+                    href="subcarpetas/carrito.html"
+                    class="enlace-carrito"
+                    aria-label="Ver carrito de compras"
+                >
+                    <span>Carrito</span>
+                    <span id="contador-carrito" class="contador-carrito">0</span>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+  <div class="modal-overlay" id="couponModal">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="coupon-title">
+        <button class="btn-close" id="closeModal" aria-label="Cerrar modal">&times;</button>
+
+        <div class="modal-header">
+            <div class="icon-wrap">
+                <i class="fa-solid fa-gift"></i>
+            </div>
+
+            <div>
+                <p class="modal-kicker">Descuentos exclusivos</p>
+                <h2 id="coupon-title">¡Regalos para ti!</h2>
+            </div>
+        </div>
+
+        <p class="modal-texto">
+            Tenemos cupones especiales listos para tu compra. Elige el que prefieras y cópialo
+            para canjearlo al finalizar tu pedido.
+        </p>
+
+        <div class="modal-coupons" id="couponsList"></div>
+    </div>
+</div>
+
+    <main>
+
+        <section id="pagina-inicio" class="pagina pagina-inicio">
+
+            <section class="hero-inicio">
+
+                <div class="contenido-hero">
+
+                    <div class="texto-hero">
+                        <p class="subtitulo-hero">
+                            PANADERÍA &amp; CAFETERÍA
+                        </p>
+
+                        <h1>
+                            Un momento dulce,
+                            <span>hecho para vos.</span>
+                        </h1>
+
+                        <p class="descripcion-hero">
+                            En Grumo creemos que los pequeños momentos
+                            merecen algo especial. Descubrí nuestros pasteles,
+                            postres, panes y bebidas preparados para acompañarte.
+                        </p>
+
+                        <div class="botones-hero">
+                            <a href="subcarpetas/catalogo.html" class="boton-principal">
+                                Explorar catálogo
+                            </a>
+
+                            <a href="subcarpetas/nosotros.html" class="boton-secundario">
+                                Conocé Grumo
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+               <div class="imagen-hero">
+    <img
+        src="https://res.cloudinary.com/djeljniac/image/upload/v1793074202/volteado-de-pina_z7irs2.jpg"
+        alt="Selección de productos de panadería y cafetería Grumo"
+        loading="eager"
+    >
+</div>
+
+            </section>
+
+            <section class="seccion-categorias">
+
+                <div class="encabezado-seccion">
+                    <p class="subtitulo-seccion">DESCUBRÍ NUESTROS SABORES</p>
+                    <h2>¿Qué se te antoja hoy?</h2>
+                    <p>
+                        Encontrá algo delicioso para acompañar tu día.
+                    </p>
+                </div>
+
+                <div class="grid-categorias">
+
+                    <a
+                        href="subcarpetas/catalogo.html?categoria=Pasteles"
+                        class="tarjeta-categoria"
+                        data-categoria="Pasteles"
+                    >
+                        <div class="imagen-categoria">
+                            <img
+                                src="https://res.cloudinary.com/djeljniac/image/upload/v1793074199/Tres-Leches_tradicional_xc2rcp.webp"
+                                alt="Pasteles Grumo"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="contenido-categoria">
+                            <h3>Pasteles</h3>
+                            <p>Un detalle dulce para cualquier ocasión.</p>
+                            <span class="enlace-categoria">Explorar →</span>
+                        </div>
+                    </a>
+
+                    <a
+                        href="subcarpetas/catalogo.html?categoria=Bebidas%20calientes"
+                        class="tarjeta-categoria"
+                        data-categoria="Bebidas calientes"
+                    >
+                        <div class="imagen-categoria">
+                            <img
+                                src="https://res.cloudinary.com/djeljniac/image/upload/v1793074195/taza_mokaccino_tjkkba.jpg"
+                                alt="Bebidas calientes Grumo"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="contenido-categoria">
+                            <h3>Bebidas calientes</h3>
+                            <p>Tu bebida favorita para hacer una pausa.</p>
+                            <span class="enlace-categoria">Explorar →</span>
+                        </div>
+                    </a>
+
+                    <a
+                        href="subcarpetas/catalogo.html?categoria=Panader%C3%ADa%20dulce"
+                        class="tarjeta-categoria"
+                        data-categoria="Panadería dulce"
+                    >
+                        <div class="imagen-categoria">
+                            <img
+                                src="https://res.cloudinary.com/djeljniac/image/upload/v1793074194/strudel-de-manzana_rrppan.jpg"
+                                alt="Panadería dulce Grumo"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="contenido-categoria">
+                            <h3>Panadería dulce</h3>
+                            <p>Pequeños placeres recién descubiertos.</p>
+                            <span class="enlace-categoria">Explorar →</span>
+                        </div>
+                    </a>
+
+                </div>
+
+            </section>
+
+            <section class="seccion-destacados">
+
+                <div class="encabezado-seccion">
+                    <p class="subtitulo-seccion">LOS FAVORITOS</p>
+                    <h2>Los más buscados</h2>
+                    <p>
+                        Descubrí algunos de los productos que hacen especial
+                        cada visita a Grumo.
+                    </p>
+                </div>
+
+                <div
+                    id="productos-destacados"
+                    class="grid-productos"
+                >
+                </div>
+
+                <div class="contenedor-boton-catalogo">
+                    <a
+                        href="subcarpetas/catalogo.html"
+                        class="boton-principal"
+                    >
+                        Ver todo el catálogo
+                    </a>
+                </div>
+
+            </section>
+
+            <section class="franja-marca">
+
+                <div class="contenido-franja-marca">
+                    <p class="subtitulo-seccion">HECHO PARA DISFRUTAR</p>
+
+                    <h2>
+                        Hay momentos que saben mejor con algo dulce.
+                    </h2>
+
+                    <p>
+                        Compartí, celebrá o simplemente regalate una pausa
+                        con los sabores de Grumo.
+                    </p>
+
+                    <a
+                        href="subcarpetas/catalogo.html"
+                        class="boton-principal"
+                    >
+                        Encontrá tu favorito
+                    </a>
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+    </main>
+
+    <footer id="pie-pagina" class="pie-pagina">
+
+        <div class="contenido-footer">
+
+            <div class="footer-marca">
+                <a href="index.html" class="logo logo-footer">
+                    <span>Grumo</span>
+                </a>
+
+                <p>
+                    Panadería y cafetería para disfrutar los pequeños
+                    momentos de la vida.
+                </p>
+            </div>
+
+            <div class="footer-enlaces">
+                <h3>Explorá</h3>
+
+                <a href="index.html">Inicio</a>
+                <a href="subcarpetas/catalogo.html">Catálogo</a>
+                <a href="subcarpetas/nosotros.html">Nosotros</a>
+            </div>
+
+            <div class="footer-enlaces">
+                <h3>Tu compra</h3>
+
+                <a href="subcarpetas/carrito.html">Carrito</a>
+                <a href="subcarpetas/pago.html">Finalizar compra</a>
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-inferior">
+            <p>
+                &copy; <span id="anio-actual">2026</span> Grumo.
+                Todos los derechos reservados.
+            </p>
+        </div>
+
+    </footer>
+
+    <script src="scripts.js"></script>
+
+    <script>
+        const anioActual = document.getElementById("anio-actual");
+
+        if (anioActual) {
+            anioActual.textContent = new Date().getFullYear();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Explorá el catálogo de Grumo: pasteles, postres, panadería dulce y bebidas para disfrutar.">
+    <title>Catálogo | Grumo</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="/subcarpetas/Recursos/miicono.ico">
+
+</head>
+
+<body>
+    <header class="encabezado">
+
+        <div class="barra-superior">
+            <p>Un pequeño antojo puede alegrar tu día</p>
+        </div>
+
+        <div class="contenedor-header">
+
+            <a href="../index.html" class="logo" aria-label="Grumo, página de inicio">
+                <span>Grumo</span>
+            </a>
+
+            <nav class="navegacion-principal" aria-label="Navegación principal">
+                <a href="../index.html">Inicio</a>
+                <a href="catalogo.html" class="activo" aria-current="page">Catálogo</a>
+                <a href="nosotros.html">Nosotros</a>
+            </nav>
+
+            <div class="acciones-header">
+                <a
+                    href="carrito.html"
+                    class="enlace-carrito"
+                    aria-label="Ver carrito de compras"
+                >
+                    <span>Carrito</span>
+                    <span id="contador-carrito" class="contador-carrito">0</span>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- ===
+             CATÁLOGO
+        ==== -->
+       
+
+
+            <!-- =======
+                 FILTROS Y BÚSQUEDA
+            ==-->
+            <section class="seccion-catalogo">
+
+                <div class="encabezado-seccion">
+                    <p class="subtitulo-seccion">HECHO PARA DISFRUTAR</p>
+                    <h2>Encontrá algo delicioso</h2>
+                    <p>Explorá nuestros productos y elegí lo que más se te antoje.</p>
+                </div>
+
+
+                <div class="controles-catalogo">
+
+                    <div class="campo-filtro">
+                        <label for="filtro-categoria">Categoría</label>
+
+                        <select id="filtro-categoria" name="categoria">
+                            <option value="">Todas las categorías</option>
+                            <option value="Pasteles">Pasteles</option>
+                            <option value="Postres">Postres</option>
+                            <option value="Bebidas calientes">Bebidas calientes</option>
+                            <option value="Bebidas frías">Bebidas frías</option>
+                            <option value="Panadería dulce">Panadería dulce</option>
+                        </select>
+                    </div>
+
+
+                    <div class="campo-busqueda">
+                        <label for="buscar-producto">Buscar producto</label>
+
+                        <input
+                            type="search"
+                            id="buscar-producto"
+                            name="buscar"
+                            placeholder="¿Qué se te antoja?"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                </div>
+
+
+                <!-- =
+                     LISTADO DE PRODUCTOS
+                ==-->
+                <div
+                    id="catalogo-productos"
+                    class="grid-productos"
+                    aria-live="polite"
+                >
+                </div>
+
+
+                <p
+                    id="mensaje-catalogo"
+                    class="mensaje-catalogo"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </section>
+
+        </section>
+
+    </main>
+    <footer id="pie-pagina" class="pie-pagina">
+
+        <div class="contenido-footer">
+
+            <div class="footer-marca">
+                <a href="../index.html" class="logo logo-footer">
+                    <span>Grumo</span>
+                </a>
+
+                <p>
+                    Panadería y cafetería para disfrutar los pequeños
+                    momentos de la vida.
+                </p>
+            </div>
+
+
+            <div class="footer-enlaces">
+                <h3>Explorá</h3>
+
+                <a href="../index.html">Inicio</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="nosotros.html">Nosotros</a>
+            </div>
+
+
+            <div class="footer-enlaces">
+                <h3>Tu compra</h3>
+
+                <a href="carrito.html">Carrito</a>
+                <a href="pago.html">Finalizar compra</a>
+            </div>
+
+        </div>
+
+
+        <div class="footer-inferior">
+            <p>
+                &copy; <span id="anio-actual">2026</span> Grumo.
+                Todos los derechos reservados.
+            </p>
+        </div>
+
+    </footer>
+    <script src="../scripts.js"></script>
+
+    <script>
+        const anioActual = document.getElementById("anio-actual");
+
+        if (anioActual) {
+            anioActual.textContent = new Date().getFullYear();
+        }
+    </script>
+
+    <!-- Aplicar la categoría -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const parametros = new URLSearchParams(window.location.search);
+            const categoria = parametros.get("categoria");
+            const filtro = document.getElementById("filtro-categoria");
+
+            if (categoria && filtro) {
+                const opcionDisponible = Array.from(filtro.options).find(
+                    opcion =>
+                        opcion.value.toLocaleLowerCase("es") ===
+                        categoria.toLocaleLowerCase("es")
+                );
+
+                if (opcionDisponible) {
+                    filtro.value = opcionDisponible.value;
+                    filtro.dispatchEvent(new Event("change", { bubbles: true }));
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
